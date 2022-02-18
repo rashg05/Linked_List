@@ -22,6 +22,7 @@ public class MyLinkedList {
 			this.head.setNext(tempNode);
 		}
 	}
+	
 	public void append(INode myNode) {
 		if(this.head == null) {
 			this.head = myNode;
@@ -40,6 +41,14 @@ public class MyLinkedList {
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
+	
+	public INode pop() {
+		INode tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+	}
+	
+
 	public void printMyNode() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
 		INode tempNode = head;
